@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    bootstrap="./tests/bootstrap.php"
+    colors="true"
+    verbose="true">
+    <testsuites>
+        <testsuite name="Game Shuffle And Deal - Test Suite">
+            <directory>./tests/Game/ShuffleAndDeal/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
