@@ -3,6 +3,10 @@
 namespace Game\ShuffleAndDeal;
 
 
+/**
+ * Class AbstractHand
+ * @package Game\ShuffleAndDeal
+ */
 abstract class AbstractHand implements \HandInterface
 {
     /**
@@ -44,6 +48,9 @@ abstract class AbstractHand implements \HandInterface
         return count($this->hand);
     }
 
+    /**
+     * @return array
+     */
     public function hand()
     {
         return $this->hand;

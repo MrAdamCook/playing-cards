@@ -3,6 +3,10 @@
 namespace Game\ShuffleAndDeal;
 
 
+/**
+ * Class Card
+ * @package Game\ShuffleAndDeal
+ */
 class Card
 {
     /**

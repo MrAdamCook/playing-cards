@@ -3,6 +3,10 @@
 namespace Game\ShuffleAndDeal;
 
 
+/**
+ * Class Player
+ * @package Game\ShuffleAndDeal
+ */
 class Player extends AbstractHand implements \PlayerInterface
 {
     /**

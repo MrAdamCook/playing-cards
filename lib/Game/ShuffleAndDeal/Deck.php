@@ -3,6 +3,10 @@
 namespace Game\ShuffleAndDeal;
 
 
+/**
+ * Class Deck
+ * @package Game\ShuffleAndDeal
+ */
 class Deck implements \DeckInterface
 {
     /**

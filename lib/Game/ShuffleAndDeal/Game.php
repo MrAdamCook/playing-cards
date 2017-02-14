@@ -3,10 +3,14 @@
 namespace Game\ShuffleAndDeal;
 
 
+/**
+ * Class Game
+ * @package Game\ShuffleAndDeal
+ */
 class Game implements \GameInterface
 {
     /**
-     * @var array
+     * @var Deck
      */
     private $deck;
 
@@ -46,11 +50,17 @@ class Game implements \GameInterface
         return $this;
     }
 
+    /**
+     * @return Deck
+     */
     public function deck()
     {
         return $this->deck;
     }
 
+    /**
+     * @return array
+     */
     public function players()
     {
         return $this->players;
