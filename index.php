@@ -4,7 +4,6 @@ require_once('lib/Application.php');
 \Application::load();
 
 $game = new Game\ShuffleAndDeal\Game();
-$deck = $game->deck();
 
 // Add players
 $game->addPlayer('Adam');

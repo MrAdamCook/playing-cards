@@ -38,4 +38,39 @@ class GameTest extends \PHPUnit_Framework_TestCase
             $game->addPlayer(\Bootstrap::generateName());
         }
     }
+
+    public function testGameStart()
+    {
+        $game = new Game();
+
+        // Add player one
+        $game->addPlayer(\Bootstrap::generateName());
+        // Add player two
+        $game->addPlayer(\Bootstrap::generateName());
+        // Add player three
+        $game->addPlayer(\Bootstrap::generateName());
+        // Add player four
+        $game->addPlayer(\Bootstrap::generateName());
+
+        // Check there are four players in the game
+        $this->assertCount(4, $game->players());
+
+        // Shuffle the game deck
+        $game->deck()->shuffle(1);
+
+        // Deal seven cards to each player
+        for($i = 0; $i < 7; $i++) {
+            foreach($game->players() as $player) {
+                $game->deck()->dealToPlayer($player);
+
+                // Check the player hand count
+                $this->assertCount($i + 1, $player->hand());
+            }
+        }
+
+        // Check that each player has a hand count of 7
+        foreach($game->players() as $player) {
+            $this->assertCount(7, $player->hand());
+        }
+    }
 }
