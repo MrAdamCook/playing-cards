@@ -22,5 +22,7 @@ Connect to your virtual machine using:
 $ vagrant ssh
 
 $ cd /var/www/html
+
 $ phpunit
+
 $ php index.php

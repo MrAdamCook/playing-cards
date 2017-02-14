@@ -34,9 +34,11 @@ class Game implements \GameInterface
     }
 
     /**
+     * Adds a new player to the game.
+     *
      * @param string $name
      * @return $this
-     * @throws \Exception
+     * @throws \Exception If the game has reached it's maximum player limit an exception is thrown as the game cannot have more players.
      */
     public function addPlayer(string $name)
     {
@@ -51,6 +53,8 @@ class Game implements \GameInterface
     }
 
     /**
+     * Returns the Deck object used within the game.
+     *
      * @return Deck
      */
     public function deck()
@@ -59,6 +63,8 @@ class Game implements \GameInterface
     }
 
     /**
+     * Returns an array of players in the game.
+     *
      * @return array
      */
     public function players()

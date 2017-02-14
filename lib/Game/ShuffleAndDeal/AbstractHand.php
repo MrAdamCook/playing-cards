@@ -28,6 +28,8 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Returns the card count and a string representation of each card in your hand.
+     *
      * @return string
      */
     public function __toString()
@@ -41,6 +43,8 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Returns the number of cards in your hand.
+     *
      * @return int
      */
     public function count()
@@ -49,6 +53,8 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Returns an array of cards in your hand.
+     *
      * @return array
      */
     public function hand()
@@ -57,6 +63,8 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Returns the max card limit of the hand.
+     *
      * @return int
      */
     public function maxCardLimit()
@@ -65,19 +73,24 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Play a card from your hand, this also calls removeCard().
+     *
      * @param int $index
-     * @return $this
+     * @return Card $card|bool
      */
     public function playCard(int $index)
     {
         $card = array_slice($this->hand, $index, 1);
         if($card) {
             $this->removeCard($index);
+            return $card;
         }
-        return $this;
+        return false;
     }
 
     /**
+     * Remove a card from your hand.
+     *
      * @param int $index
      * @return $this
      */
@@ -88,8 +101,11 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Adds the $card into your hand if it is not already at it's limit.
+     *
      * @param $card
      * @return $this
+     * @throws \Exception If the hand has reached it's maximum card limit an exception is thrown as the hand cannot retrieve more cards.
      */
     public function retrieveCard(Card $card)
     {
@@ -101,6 +117,8 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Sort the cards in your hand by suit then value.
+     *
      * @return $this
      */
     public function sort()
@@ -117,6 +135,8 @@ abstract class AbstractHand implements \HandInterface
     }
 
     /**
+     * Swap two cards in your hand.
+     *
      * @param int $a
      * @param int $b
      * @return $this

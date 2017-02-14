@@ -60,6 +60,8 @@ class Card
     }
 
     /**
+     * Returns a combination of the named value and named suit.
+     *
      * @return string
      */
     public function __toString()
@@ -68,6 +70,7 @@ class Card
     }
 
     /**
+     * Returns the value of the card, for example '0'
      * @return int
      */
     public function suit() {
@@ -75,6 +78,8 @@ class Card
     }
 
     /**
+     * Returns the named suit of the card, for example 'Hearts'.
+     *
      * @return string
      */
     public function suitAsString()
@@ -83,6 +88,8 @@ class Card
     }
 
     /**
+     * Returns the value of the card, for example '12'.
+     *
      * @return int
      */
     public function value() {
@@ -90,6 +97,8 @@ class Card
     }
 
     /**
+     * Returns the named value of the card, for example 'Queen'.
+     *
      * @return string
      */
     public function valueAsString()
@@ -98,6 +107,8 @@ class Card
     }
 
     /**
+     * Compare the suit of $this card to the supplied $card.
+     *
      * @param $card
      * @return int
      */
@@ -116,6 +127,8 @@ class Card
     }
 
     /**
+     * Compare the value of $this card to the supplied $card.
+     *
      * @param $card
      * @return int
      */
@@ -134,6 +147,9 @@ class Card
     }
 
     /**
+     * First compares the suit of $this card to the supplied $card,
+     * if they match, we then compare the values of the two cards.
+     *
      * @param $card
      * @return int
      */

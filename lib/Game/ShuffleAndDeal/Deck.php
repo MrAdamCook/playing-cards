@@ -23,6 +23,8 @@ class Deck implements \DeckInterface
     }
 
     /**
+     * Returns the card count and a string representation of each card in your hand.
+     *
      * @return string
      */
     public function __toString()
@@ -36,6 +38,9 @@ class Deck implements \DeckInterface
     }
 
     /**
+     * Builds the deck using the Card::$suits and Card::$values.
+     * The deck at this point will be ordered from 'Ace of Hearts' at the top, to 'King of Diamonds' at the bottom.
+     *
      * @return $this
      */
     public function build()
@@ -50,6 +55,8 @@ class Deck implements \DeckInterface
     }
 
     /**
+     * Returns the number of cards in the deck.
+     *
      * @return int
      */
     public function count()
@@ -58,9 +65,11 @@ class Deck implements \DeckInterface
     }
 
     /**
+     * Gives the top card to the $player and removes it from the deck.
+     *
      * @param Player $player
      * @return $this
-     * @throws \Exception
+     * @throws \Exception If the deck is empty an exception is thrown as we cannot deal more cards.
      */
     public function dealToPlayer(Player $player) {
         if(empty($this->deck)) {
@@ -73,6 +82,8 @@ class Deck implements \DeckInterface
     }
 
     /**
+     * Returns an array of cards in the deck.
+     *
      * @return array
      */
     public function deck()
@@ -81,6 +92,8 @@ class Deck implements \DeckInterface
     }
 
     /**
+     * Resets the deck back to it's initial state where the cards are in order.
+     *
      * @return $this
      */
     public function reset()
@@ -90,12 +103,14 @@ class Deck implements \DeckInterface
     }
 
     /**
-     * @param int $strength
+     * Shuffles the deck.
+     *
+     * @param int $shuffleCount The number of times the deck is to be shuffled.
      * @return $this
      */
-    public function shuffle(int $strength = 1)
+    public function shuffle(int $shuffleCount = 1)
     {
-        while(--$strength) {
+        while(--$shuffleCount) {
             shuffle($this->deck);
         }
         return $this;

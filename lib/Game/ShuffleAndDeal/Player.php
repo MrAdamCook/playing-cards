@@ -25,6 +25,8 @@ class Player extends AbstractHand implements \PlayerInterface
     }
 
     /**
+     * Returns the player name, card count and a string representation of each card in the players hand.
+     *
      * @return string
      */
     public function __toString()
@@ -35,6 +37,8 @@ class Player extends AbstractHand implements \PlayerInterface
     }
 
     /**
+     * Returns the player name with each 'word/name' being capitalized.
+     *
      * @return string
      */
     public function name()
